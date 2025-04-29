@@ -1,0 +1,5 @@
+C:/Users/k013268n/Desktop/Year2_AR_Dev/.utmp/RelWithDebInfo/1j3q6f57/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/k013268n/Desktop/Year2_AR_Dev/.utmp/RelWithDebInfo/1j3q6f57/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/k013268n/Desktop/Year2_AR_Dev/.utmp/RelWithDebInfo/1j3q6f57/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/k013268n/Desktop/Year2_AR_Dev/.utmp/RelWithDebInfo/1j3q6f57/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/k013268n/Desktop/Year2_AR_Dev/.utmp/RelWithDebInfo/1j3q6f57/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir
