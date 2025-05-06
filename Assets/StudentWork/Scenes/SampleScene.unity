@@ -1836,6 +1836,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Continue Button
       objectReference: {fileID: 0}
+    - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f,
+        type: 3}
+      propertyPath: m_text
+      value: 'Welcome to my game,
+
+        choose your scene'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779608150239002450, guid: 063cc896506b947c7b2c2ae3beb5868f,
+        type: 3}
+      propertyPath: m_ActiveFontFeatures.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5865099264268480235, guid: 063cc896506b947c7b2c2ae3beb5868f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
