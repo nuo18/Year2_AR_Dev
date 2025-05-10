@@ -17,4 +17,13 @@ public class MainMenuManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    // Back Button
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
+
+    // Hook this to your Back button
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
 }
