@@ -29,33 +29,31 @@ public class TargetManager : MonoBehaviour
         _remaining = targetCount;
         UpdateUI();
 
-        SpawnTargets();
-    }
-
-    private void SpawnTargets()
-    {
+        // Spawn and hook each target
         Camera cam = Camera.main;
         for (int i = 0; i < targetCount; i++)
         {
-            // horizontal: left/right spread 
             float xOff = Random.Range(-horizontalSpread, horizontalSpread);
-            // vertical: always above the ground by between minHeight and maxHeight
             float yOff = Random.Range(minHeight, maxHeight);
-            // depth: in front of camera between minDistance and maxDistance
             float zOff = Random.Range(minDistance, maxDistance);
 
-            // build the local?space offset and convert to world?space
             Vector3 localOffset = new Vector3(xOff, yOff, zOff);
             Vector3 worldPos = cam.transform.TransformPoint(localOffset);
+            GameObject t = Instantiate(targetPrefab, worldPos, Quaternion.identity);
 
-            // spawn with no rotation
-            Instantiate(targetPrefab, worldPos, Quaternion.identity);
+            // Let each Target know where to report itself
+            t.GetComponent<Target>().Initialize(this);
         }
     }
 
     private void UpdateUI()
     {
         remainingText.text = $"Targets Remaining: {_remaining}";
+        
+        if (_remaining <= 0)
+        {
+            remainingText.text = $"Targets Remaining: {_remaining} \n YOU WIN!!!";
+        }
     }
 
     // Called by each Target when it’s destroyed
