@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.XR.ARFoundation;
+using TMPro;
 
 public class TargetManager : MonoBehaviour
 {
@@ -16,8 +17,18 @@ public class TargetManager : MonoBehaviour
 
     private List<GameObject> spawnedTargets = new List<GameObject>();
 
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI remainingText;
+
+    // targets remaining
+    private int _remaining;
+
     private void Start()
     {
+        // UI
+        _remaining = targetCount;
+        UpdateUI();
+
         SpawnTargets();
     }
 
@@ -40,5 +51,17 @@ public class TargetManager : MonoBehaviour
             // spawn with no rotation
             Instantiate(targetPrefab, worldPos, Quaternion.identity);
         }
+    }
+
+    private void UpdateUI()
+    {
+        remainingText.text = $"Targets Remaining: {_remaining}";
+    }
+
+    // Called by each Target when it’s destroyed
+    public void NotifyTargetDestroyed()
+    {
+        _remaining = Mathf.Max(0, _remaining - 1);
+        UpdateUI();
     }
 }
